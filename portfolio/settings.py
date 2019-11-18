@@ -16,7 +16,6 @@ from portfolio.secret_settings import *
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
@@ -27,7 +26,6 @@ SECRET_KEY = SECRET_KEY
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -72,7 +70,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'portfolio.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
@@ -86,7 +83,6 @@ DATABASES = {
         'PORT': DB_PORT,
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -106,7 +102,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
@@ -120,14 +115,15 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'portfolio/static/')
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
-# Save location for media files
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-# Media access URL
 MEDIA_URL = '/media/'

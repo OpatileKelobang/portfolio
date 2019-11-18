@@ -10,7 +10,7 @@
     <meta name="author" content="Bogote Development">
     <meta name="generator" content="Jekyll v3.8.5">
 
-    <title>Bogote Dev · Blog</title>
+    <title>Bogote Dev · {{ blog.title }}</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -90,23 +90,22 @@
         <!-- Blog Entries Column -->
         <div class="col-md-8">
 
-            <h1 class="my-4">Latest Posts</h1>
+            <h1 class="my-4">{{ blog.title }}</h1>
 
-            {% for blog in blogs.all %}
+
                 <!-- Blog Post -->
                 <div class="card mb-4">
                     <img class="card-img-top img-fluid" src="{{ blog.image.url }}" alt="Blog Header Image">
                     <div class="card-body">
-                        <a href="{% url 'blog_post' blog.id %}"><h2 class="card-title">{{ blog.title }}</h2></a>
-                        <p class="card-text">{{ blog.summary }}</p>
-                        <a href="{% url 'blog_post' blog.id %}" class="btn btn-primary">Read More &rarr;</a>
+                        <h3 href="{% url 'blog_post' blog.id %}"><h2 class="card-title">{{ blog.title }}</h2></h3>
+                        <p class="card-text">{{ blog.body }}</p>
                     </div>
                     <div class="card-footer text-muted">
                         {{ blog.pub_date_formatted }}
                         <a href="#">Start Bootstrap</a>
                     </div>
                 </div>
-            {% endfor %}
+
 
             <!-- Pagination -->
             <ul class="pagination justify-content-center mb-4">

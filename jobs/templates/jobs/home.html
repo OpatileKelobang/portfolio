@@ -1,13 +1,15 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load staticfiles %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Full Stack Software Developer Portfolio">
-    <meta name="keywords" content="HTML5,CSS,XML,JavaScript, Python, Django, Postgres, React-JS, Java, iOS, Android, Mobile, Xamarin, Xamarin-Forms, C#">
+    <meta name="keywords"
+          content="HTML5,CSS,XML,JavaScript, Python, Django, Postgres, React-JS, Java, iOS, Android, Mobile, Xamarin, Xamarin-Forms, C#">
     <meta name="author" content="Bogote Development">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>Album example · Bootstrap</title>
+    <title>Bogote Dev · Home</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -50,36 +52,49 @@
         code {
             font-size: 80%;
         }
+
+        /* Top Shadow CSS
+        -------------------------------------------------- */
+        body::before {
+            content: "";
+            position: fixed;
+            top: -10px;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            box-shadow: 0px 0 10px rgba(0, 0, 0, 0.8);
+            z-index: 100;
+        }
     </style>
 
 </head>
 <body>
 <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="{% url 'home' %}">
-            <img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30"
-                 class="d-inline-block align-top" alt="">
-            Bogote Development
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">GitHub</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Resume</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-            </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="{% static 'bogote logo.svg' %}" width="30" height="30" class="d-inline-block align-top" alt="">Bogote Development
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/OpatileKelobang/" target="_blank">GitHub</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Resume</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'blogposts' %}">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 </header>
@@ -88,8 +103,8 @@
 
     <section class="jumbotron text-center">
         <div class="container">
-            <h1 class="jumbotron-heading">Hi. My name is Opatile Kelobang.</h1>
-            <p class="lead text-muted">I'm a Full Stack Web and Software Developer</p>
+            <h1 class="jumbotron-heading">Welcome To Bogote Development</h1>
+            <p class="lead text-muted">Custom Software Application Specialists</p>
             <p>
                 <a href="#" class="btn btn-primary my-2">Contact Me</a>
             </p>
@@ -119,7 +134,7 @@
 
 <footer class="footer mt-auto py-3 text-muted">
     <div class="container text-center">
-        <p>&copy; Bogote Development {% now "Y" %}</p>
+        <p>Copyright &copy; Bogote Development {% now "Y" %}</p>
     </div>
 </footer>
 
